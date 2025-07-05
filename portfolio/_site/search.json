@@ -1,0 +1,86 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Shannon Fernandes",
+    "section": "",
+    "text": "I’m Shannon — psychologist, coder, and writer.\n\nplot_stat_map(tmap_filename, threshold=2, black_bg=True)\n\n\n\n\n\n\n\n\nI create thoughtful tools, analyze brains, and write about consciousness, creativity, and cognition."
+  },
+  {
+    "objectID": "interests.html",
+    "href": "interests.html",
+    "title": "Psychology Projects",
+    "section": "",
+    "text": "Welcome to my work in psychology! Here are a few things I’ve worked on:\n\n\nBuilt a multidimensional extraversion scale and an item-generation tool (Psydeon).\n\n\n\nAnalyzed ADHD fMRI data using Nilearn and basic VBM pipelines.\n\n\n\n\nDo You Exist? — A beginner’s epistemology guide for psychology students.\nThe Art of Almost — A personal narrative exploring ADHD.\n\n← Back to Home"
+  },
+  {
+    "objectID": "interests.html#psychometric-tool-development",
+    "href": "interests.html#psychometric-tool-development",
+    "title": "Psychology Projects",
+    "section": "",
+    "text": "Built a multidimensional extraversion scale and an item-generation tool (Psydeon)."
+  },
+  {
+    "objectID": "interests.html#neuropsych-experiments",
+    "href": "interests.html#neuropsych-experiments",
+    "title": "Psychology Projects",
+    "section": "",
+    "text": "Analyzed ADHD fMRI data using Nilearn and basic VBM pipelines."
+  },
+  {
+    "objectID": "interests.html#writing",
+    "href": "interests.html#writing",
+    "title": "Psychology Projects",
+    "section": "",
+    "text": "Do You Exist? — A beginner’s epistemology guide for psychology students.\nThe Art of Almost — A personal narrative exploring ADHD.\n\n← Back to Home"
+  },
+  {
+    "objectID": "index.html#bio",
+    "href": "index.html#bio",
+    "title": "Shannon Fernandes",
+    "section": "",
+    "text": "I’m Shannon — psychologist, coder, and writer.\n\nplot_stat_map(tmap_filename, threshold=2, black_bg=True)\n\n\n\n\n\n\n\n\nI create thoughtful tools, analyze brains, and write about consciousness, creativity, and cognition."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Shannon Fernandes",
+    "section": "🎓 Education",
+    "text": "🎓 Education\n\nM.A. Psychology — Clinical and Theoretical Emphasis\n\nB.A. Philosophy & Psychology — Dual Major\n\nCertificate in Computational Neuroscience — Coursera/Stanford"
+  },
+  {
+    "objectID": "index.html#work",
+    "href": "index.html#work",
+    "title": "Shannon Fernandes",
+    "section": "💼 Work",
+    "text": "💼 Work\n\nFounder — Psymoat (psychometric automation)\nVisiting Faculty — Clinical Psychology\nConsultant — Behavioral Research + Product Design"
+  },
+  {
+    "objectID": "index.html#interests",
+    "href": "index.html#interests",
+    "title": "Shannon Fernandes",
+    "section": "🎯 Interests",
+    "text": "🎯 Interests\n\n\n Psychology\n\n\n Coding\n\n\n Writing\n\n\n Design"
+  },
+  {
+    "objectID": "index.html#interests-1",
+    "href": "index.html#interests-1",
+    "title": "Shannon Fernandes",
+    "section": "🎯 Interests",
+    "text": "🎯 Interests\n\n\n Psychology\n\n\n Coding\n\n\n Writing\n\n\n Design"
+  },
+  {
+    "objectID": "index.html#explore-my-interests",
+    "href": "index.html#explore-my-interests",
+    "title": "Shannon Fernandes",
+    "section": "🔍 Explore My Interests",
+    "text": "🔍 Explore My Interests\n\n\n Psychology\n\n\n Coding\n\n\n Writing\n\n\n Design"
+  },
+  {
+    "objectID": "index.html#bio-1",
+    "href": "index.html#bio-1",
+    "title": "Shannon Fernandes",
+    "section": "👋 Bio",
+    "text": "👋 Bio\nI’m Shannon — psychologist, coder, and writer. I create thoughtful tools, analyze brains, and write about consciousness, creativity, and cognition.\n\n\n\n🔍 Explore My Interests\n\n\n::: {.interest-card}  Psychology :::\n::: {.interest-card}  Coding :::\n::: {.interest-card}  Writing :::\n::: {.interest-card}  Design :::"
+  }
+]

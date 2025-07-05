@@ -1,0 +1,23 @@
+---
+title: "Psychology Projects"
+format: html
+---
+
+# 🧠 Psychology Projects
+
+Here’s where psychology meets tech, theory, and reflection.
+
+## 🧪 Psychometric Design
+
+**Psydeon** — A scalable item-generation tool for entrance exams and research.
+
+## 🧬 Neuropsych Analysis
+
+ADHD-based fMRI analysis using `nilearn`, VBM, and network connectivity visualizations.
+
+## 📖 Books and Writing
+
+- *Do You Exist?* — A playful dive into epistemology for psych students  
+- *The Art of Almost* — My first-person experience of ADHD
+
+[← Back to Home](../index.qmd)

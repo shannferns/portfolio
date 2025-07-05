@@ -1,0 +1,19 @@
+project:
+  type: website
+
+website:
+  title: "Shannon Fernandes"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+    right:
+      - text: "Toggle theme"
+        toggle: true  # ✅ This is what enables the light/dark toggle button
+
+format:
+  html:
+    theme:
+      dark: darkly  # ✅ Pick a dark theme that pairs well
+    css: styles.css
+    toc: false
