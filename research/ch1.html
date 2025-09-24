@@ -342,7 +342,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../research/ch1.html">Multidimensional Scaling (MDS) from Nosofsky (1991)</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../research/ch1.html">Chapters</a></li><li class="breadcrumb-item"><a href="../research/ch1.html">Multidimensional Scaling (MDS) from Nosofsky (1991)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -358,24 +358,46 @@ window.Quarto = {
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Overview</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../research/index2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Chapters</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../research/ch1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Multidimensional Scaling (MDS) from Nosofsky (1991)</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../research/ch2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ADHD Reddit Sentiment Analysis</span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -386,7 +408,7 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../research/ch1.html">Chapters</a></li><li class="breadcrumb-item"><a href="../research/ch1.html">Multidimensional Scaling (MDS) from Nosofsky (1991)</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Multidimensional Scaling (MDS) from Nosofsky (1991)</h1>
 </div>
@@ -417,7 +439,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="dependencies">Dependencies</h3>
 <p>We will begin with importing libraries relevant to us like <code>numpy</code> and <code>sns</code> for computing and plotting. We would also be importing <code>pdist</code> and <code>squareform</code> from <code>scipy.spatial.distance</code> to calculate the pairwise distance and import <code>MDS</code> from <code>sklearn.manifold</code> to calculate the MDS values.</p>
 <p>Lastly, we set the <code>seed</code> to ensure our (pseudo) random numbers are reproducible.</p>
-<div id="bd8da07f" class="cell" data-execution_count="1">
+<div id="cc7a7309" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.manifold <span class="im">import</span> MDS</span>
@@ -438,7 +460,7 @@ window.Quarto = {
 </figure>
 </div>
 <p>To replicate this, we will create 10 faces with 4 features (e.g.&nbsp;eyes height, distance between eyes, nose length, etc). Nosofsky (1991) has defined the features but for our purposes we can move ahead with random features.</p>
-<div id="05f1fb6a" class="cell" data-execution_count="2">
+<div id="bb340d61" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>n_faces <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>n_dims <span class="op">=</span> <span class="dv">4</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>faces <span class="op">=</span> np.random.rand(n_faces, n_dims)</span>
@@ -490,13 +512,13 @@ d = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}
 \]</span></p>
 <p>The reason we are calculating the pair wise values (using Euclidean distance) is so that we can use the same for Multidimensional scaling, a dimension reduction method. You might be familiar with PCA as another dimension reduction method which uses correlation. I was surprised to learn that PCA and MDS at times can present with similar values.</p>
 <p>We then run our code to get -</p>
-<div id="77f70b55" class="cell" data-execution_count="3">
+<div id="4e88e339" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>face_dists <span class="op">=</span> squareform(pdist(faces))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We then use the <em>exponential decay function</em> used by Nosofsky (1991) to simulate similarity and added noise from a normal distribution. Nosofsky (1991) used the following formula for the same -</p>
 <p><span class="math inline">\(s_{ij} = \exp(-d_{ij})\)</span></p>
 <p>We also clip the range to ensure it’s clean and interpretable for our MDS. The last line prevents assymetry.</p>
-<div id="852b81ce" class="cell" data-execution_count="4">
+<div id="b660a368" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>similarity_matrix <span class="op">=</span> np.exp(<span class="op">-</span>face_dists) <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="fl">0.05</span>, face_dists.shape)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>similarity_matrix <span class="op">=</span> np.clip(similarity_matrix, <span class="dv">0</span>, <span class="dv">1</span>)</span>
@@ -511,7 +533,7 @@ d = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}
 <p>Faces that look similar are closer.<br>
 Faces that look different are farther.</p>
 <p>The original paper generated a 4D space, we have used a 2D space to keep it simpler.</p>
-<div id="abde90bc" class="cell" data-execution_count="5">
+<div id="13babe73" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">"ignore"</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -539,7 +561,7 @@ Faces that look different are farther.</p>
 </div>
 </div>
 <p>Lastly, we introduced a new face into the psychological space. Its position simulates a stimulus presented during a recognition/classification trial. Along with that qe calculated the distance between the test face and each stored face and then used Shepard’s law to convert those distances into activation strengths, and plotted the same.</p>
-<div id="2b63d8bc" class="cell" data-execution_count="6">
+<div id="939f27e0" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>test_face_coord <span class="op">=</span> np.array([<span class="fl">0.3</span>, <span class="fl">0.15</span>])</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>distances <span class="op">=</span> np.linalg.norm(stored_coords <span class="op">-</span> test_point, axis<span class="op">=</span><span class="dv">1</span>)</span>
