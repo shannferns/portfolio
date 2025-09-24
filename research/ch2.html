@@ -316,7 +316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../research/ch1.html">Chapters</a></li><li class="breadcrumb-item"><a href="../research/ch2.html">ADHD Reddit Sentiment Analysis</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../research/ch2.html">Standalone</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -332,6 +332,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../research/ch2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Standalone</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -364,12 +370,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Multidimensional Scaling (MDS) from Nosofsky (1991)</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../research/ch2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">ADHD Reddit Sentiment Analysis</span></a>
-  </div>
-</li>
       </ul>
   </li>
     </ul>
@@ -382,7 +382,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../research/ch1.html">Chapters</a></li><li class="breadcrumb-item"><a href="../research/ch2.html">ADHD Reddit Sentiment Analysis</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">ADHD Reddit Sentiment Analysis</h1>
 </div>
@@ -401,7 +401,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="8f3981e5" class="cell" data-execution_count="1">
+<div id="9909167d" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"s3.csv"</span>)</span>
@@ -612,7 +612,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="71630ea0" class="cell" data-execution_count="2">
+<div id="c70fbc26" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#pip install -q nltk</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">"vader_lexicon"</span>)</span>
@@ -642,10 +642,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[nltk_data] Downloading package vader_lexicon to
 [nltk_data]     /home/r3411249/nltk_data...
 [nltk_data]   Package vader_lexicon is already up-to-date!
-  0%|          | 0/1000 [00:00&lt;?, ?it/s]  9%|▊         | 87/1000 [00:00&lt;00:01, 825.55it/s] 17%|█▋        | 170/1000 [00:00&lt;00:01, 753.04it/s] 25%|██▍       | 246/1000 [00:00&lt;00:01, 737.74it/s] 33%|███▎      | 326/1000 [00:00&lt;00:00, 757.55it/s] 40%|████      | 402/1000 [00:00&lt;00:00, 710.95it/s] 48%|████▊     | 476/1000 [00:00&lt;00:00, 719.85it/s] 55%|█████▍    | 549/1000 [00:00&lt;00:00, 700.67it/s] 62%|██████▏   | 620/1000 [00:00&lt;00:00, 656.43it/s] 69%|██████▉   | 690/1000 [00:00&lt;00:00, 667.12it/s] 76%|███████▌  | 758/1000 [00:01&lt;00:00, 665.83it/s] 82%|████████▎ | 825/1000 [00:01&lt;00:00, 654.90it/s] 90%|████████▉ | 897/1000 [00:01&lt;00:00, 671.71it/s] 97%|█████████▋| 969/1000 [00:01&lt;00:00, 680.86it/s]100%|██████████| 1000/1000 [00:01&lt;00:00, 692.83it/s]</code></pre>
+  0%|          | 0/1000 [00:00&lt;?, ?it/s]  8%|▊         | 82/1000 [00:00&lt;00:01, 817.36it/s] 16%|█▋        | 164/1000 [00:00&lt;00:01, 695.98it/s] 24%|██▎       | 235/1000 [00:00&lt;00:01, 695.92it/s] 32%|███▎      | 325/1000 [00:00&lt;00:00, 763.51it/s] 40%|████      | 403/1000 [00:00&lt;00:00, 689.62it/s] 47%|████▋     | 474/1000 [00:00&lt;00:00, 695.39it/s] 55%|█████▍    | 545/1000 [00:00&lt;00:00, 680.78it/s] 61%|██████▏   | 614/1000 [00:00&lt;00:00, 661.26it/s] 68%|██████▊   | 681/1000 [00:00&lt;00:00, 661.13it/s] 75%|███████▍  | 748/1000 [00:01&lt;00:00, 661.55it/s] 82%|████████▏ | 815/1000 [00:01&lt;00:00, 648.14it/s] 89%|████████▊ | 887/1000 [00:01&lt;00:00, 666.18it/s] 95%|█████████▌| 954/1000 [00:01&lt;00:00, 665.25it/s]100%|██████████| 1000/1000 [00:01&lt;00:00, 678.84it/s]</code></pre>
 </div>
 </div>
-<div id="5f946df6" class="cell" data-execution_count="3">
+<div id="0f26698b" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
