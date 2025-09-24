@@ -1,0 +1,89 @@
+[
+  {
+    "objectID": "index2.html",
+    "href": "index2.html",
+    "title": "Shannon Fernandes",
+    "section": "",
+    "text": "#Introduction"
+  },
+  {
+    "objectID": "research/ch2.html",
+    "href": "research/ch2.html",
+    "title": "ADHD Reddit Sentiment Analysis",
+    "section": "",
+    "text": "import pandas as pd \n\ndf = pd.read_csv(\"s3.csv\")\ndf.head(15)\n\n\n\n\n\n\n\n\ntitle\nselftext\nscore\nid\nurl\nnum_comments\ncreated_utc\ncreated_datetime\nSubreddit\n\n\n\n\n0\nStarting concerta next week, what can i expect?\nNext week ill start using concerta 18mg before...\n1\n9usem4\nhttps://www.reddit.com/r/ADHD/comments/9usem4/...\n1.0\n1.541538e+09\n2018-11-06 21:05:48\nr/ADHD\n\n\n1\nIs this worth consulting a Doctor or am I just...\nFor about 4 years now I have considered myself...\n4\n2t4i62\nhttps://www.reddit.com/r/ADHD/comments/2t4i62/...\n2.0\n1.421807e+09\n2015-01-21 02:21:59\nr/ADHD\n\n\n2\nAny one successful at joining the Navy/Armed F...\nSO I am trying to join the Navy, and in my rec...\n2\n2ngewi\nhttps://www.reddit.com/r/ADHD/comments/2ngewi/...\n5.0\n1.416983e+09\n2014-11-26 06:28:03\nr/ADHD\n\n\n3\nQuestion about sleepless nights\nHi all, \\n\\n\\nSo, I tend to be a bit fog bra...\n1\nfu850f\nhttps://www.reddit.com/r/ADHD/comments/fu850f/...\n1.0\n1.585919e+09\n2020-04-03 13:09:32\nr/ADHD\n\n\n4\nKeyless entry changed my life!\nBack before I owned cars that had remote door ...\n19\nj21v8z\nhttps://www.reddit.com/r/ADHD/comments/j21v8z/...\n4.0\n1.601395e+09\n2020-09-29 15:51:09\nr/ADHD\n\n\n5\nFrustration, anger, depression, giving up.\nI am a 22 guy originally from Israel, I study ...\n5\nj0nztr\nhttps://www.reddit.com/r/ADHD/comments/j0nztr/...\n30.0\n1.601197e+09\n2020-09-27 08:59:53\nr/ADHD\n\n\n6\nMy eyes have been opened\nI recently watched a Ted talk about ADHD and e...\n42\nkefzu1\nhttps://www.reddit.com/r/ADHD/comments/kefzu1/...\n20.0\n1.608147e+09\n2020-12-16 19:29:38\nr/ADHD\n\n\n7\nQuestion - Conversations\nHi. I won’t go into detail about all my other ...\n11\n9xl72b\nhttps://www.reddit.com/r/ADHD/comments/9xl72b/...\n9.0\n1.542366e+09\n2018-11-16 10:58:14\nr/ADHD\n\n\n8\nADD frustration\nDoes anyone else get so frustrated from trying...\n19\n6ajet9\nhttps://www.reddit.com/r/ADHD/comments/6ajet9/...\n20.0\n1.494501e+09\n2017-05-11 11:05:05\nr/ADHD\n\n\n9\nThe curse of ADHD memory\nSomething has been bugging me all day. I knew ...\n32\nby12t3\nhttps://www.reddit.com/r/ADHD/comments/by12t3/...\n12.0\n1.559948e+09\n2019-06-07 23:00:17\nr/ADHD\n\n\n10\nBig yikes\nI started school again today and holy shit I f...\n2\ndlpmei\nhttps://www.reddit.com/r/ADHD/comments/dlpmei/...\n0.0\n1.571783e+09\n2019-10-22 22:24:07\nr/ADHD\n\n\n11\nADHD = Faster Reading ?\nI have a question for all of you. I can read a...\n11\nre3lx\nhttps://www.reddit.com/r/ADHD/comments/re3lx/a...\n41.0\n1.332765e+09\n2012-03-26 12:25:14\nr/ADHD\n\n\n12\nAny suggestions for concentration music?\nI don’t know if it’s the same for other ADHDer...\n3\n8ulqbr\nhttps://www.reddit.com/r/ADHD/comments/8ulqbr/...\n21.0\n1.530208e+09\n2018-06-28 17:43:55\nr/ADHD\n\n\n13\nAny other caffeine addicts out there?\nI love the game of Russian roulette I play wit...\n9\nb1hxr1\nhttps://www.reddit.com/r/ADHD/comments/b1hxr1/...\n10.0\n1.552672e+09\n2019-03-15 17:50:49\nr/ADHD\n\n\n14\nStopped to go grocery shopping and have just b...\nAt least I remembered my list this time...or t...\n156\n9p502v\nhttps://www.reddit.com/r/ADHD/comments/9p502v/...\n46.0\n1.539829e+09\n2018-10-18 02:10:50\nr/ADHD\n\n\n\n\n\n\n\n\n#pip install -q nltk\nimport nltk\nnltk.download(\"vader_lexicon\")\n\nfrom nltk.sentiment import SentimentIntensityAnalyzer\nimport pandas as pd\nfrom tqdm import tqdm\n\n# Load the data\ndf = pd.read_csv(\"s3.csv\")\ntexts = df[\"selftext\"].fillna(\"\").tolist()\n\n# Run VADER sentiment analysis\nsid = SentimentIntensityAnalyzer()\n\nsentiments = [sid.polarity_scores(t)[\"compound\"] for t in tqdm(texts)]\ndf[\"Sentiment_Score\"] = sentiments\n\nimport numpy as np\n\ndf[\"Score_log\"] = np.log1p(df[\"score\"])\ndf[\"Comments_log\"] = np.log1p(df[\"num_comments\"])\n\n\ndf.to_csv(\"all_posts_with_sentiment.csv\", index=False)\n\n[nltk_data] Downloading package vader_lexicon to\n[nltk_data]     /home/r3411249/nltk_data...\n[nltk_data]   Package vader_lexicon is already up-to-date!\n  0%|          | 0/1000 [00:00&lt;?, ?it/s]  9%|▊         | 87/1000 [00:00&lt;00:01, 822.53it/s] 17%|█▋        | 170/1000 [00:00&lt;00:01, 742.09it/s] 24%|██▍       | 245/1000 [00:00&lt;00:01, 717.36it/s] 33%|███▎      | 326/1000 [00:00&lt;00:00, 742.12it/s] 40%|████      | 401/1000 [00:00&lt;00:00, 701.59it/s] 47%|████▋     | 474/1000 [00:00&lt;00:00, 709.61it/s] 55%|█████▍    | 546/1000 [00:00&lt;00:00, 684.59it/s] 62%|██████▏   | 615/1000 [00:00&lt;00:00, 605.19it/s] 68%|██████▊   | 678/1000 [00:01&lt;00:00, 608.94it/s] 74%|███████▍  | 743/1000 [00:01&lt;00:00, 620.40it/s] 81%|████████  | 806/1000 [00:01&lt;00:00, 613.52it/s] 87%|████████▋ | 872/1000 [00:01&lt;00:00, 625.64it/s] 94%|█████████▍| 942/1000 [00:01&lt;00:00, 645.54it/s]100%|██████████| 1000/1000 [00:01&lt;00:00, 662.87it/s]\n\n\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Load data\ndf = pd.read_csv(\"all_posts_with_sentiment.csv\")\n\n# Filter out NaN or flat sentiment\ndf = df[df[\"Sentiment_Score\"].notna()]\ndf = df[df[\"Sentiment_Score\"] != 0]\n\n# Set style\nsns.set(style=\"whitegrid\", rc={\"figure.figsize\": (8, 4)})\n\n# Plot histogram + KDE\nsns.histplot(data=df, x=\"Sentiment_Score\", hue=\"Subreddit\",\n             bins=40, kde=True, stat=\"density\", common_norm=False, palette=\"Set2\", alpha=0.6)\n\nplt.title(\"Sentiment Score Distribution by Subreddit\", fontsize=16)\nplt.xlabel(\"Sentiment Score (VADER)\", fontsize=12)\nplt.ylabel(\"Density\")\nplt.axvline(0, color=\"gray\", linestyle=\"--\")\nplt.tight_layout()\nplt.show()",
+    "crumbs": [
+      "Home",
+      "ADHD Reddit Sentiment Analysis"
+    ]
+  },
+  {
+    "objectID": "research/ch1.html",
+    "href": "research/ch1.html",
+    "title": "Multidimensional Scaling (MDS) from Nosofsky (1991)",
+    "section": "",
+    "text": "I came across an interesting paper Titled ‘Tests of an exemplar model for relating perceptual classification and recognition memory’ by R. Nosofsky (1991) which introduces an exemplar-based model to explain how people classify and recognize stimuli. In this section we will try to understand the first part of the paper that uses Multidimensional Scaling (MDS) to place each face into a mathematical space (we will not be covering the second part here, perhaps in another page in the future).",
+    "crumbs": [
+      "Home",
+      "Multidimensional Scaling (MDS) from Nosofsky (1991)"
+    ]
+  },
+  {
+    "objectID": "research/ch1.html#abstract",
+    "href": "research/ch1.html#abstract",
+    "title": "Multidimensional Scaling (MDS) from Nosofsky (1991)",
+    "section": "Abstract",
+    "text": "Abstract\n“Experiments were conducted in which Ss made classification, recognition, and similarity judgments for 34 schematic faces. A multidimensional scaling (MDS) solution for the faces was derived on the basis of the similarity judgments. This MDS solution was then used in conjunction with an exemplar-similarity model to accurately predict Ss’ classification and recognition judgments. Evidence was provided that Ss allocated attention to the psychological dimensions differentially for classification and recognition. The distribution of attention came close to the ideal-observer distribution for classification, and some tendencies in that direction were observed for recognition. Evidence was also provided for interactive effects of individual exemplar frequencies and similarities on classification and recognition, in accord with the predictions of the exemplar model. Unexpectedly, however, the frequency effects appeared to be larger for classification than for recognition.”\nLink to paper - https://pubmed.ncbi.nlm.nih.gov/1826320/",
+    "crumbs": [
+      "Home",
+      "Multidimensional Scaling (MDS) from Nosofsky (1991)"
+    ]
+  },
+  {
+    "objectID": "research/ch1.html#replication",
+    "href": "research/ch1.html#replication",
+    "title": "Multidimensional Scaling (MDS) from Nosofsky (1991)",
+    "section": "Replication",
+    "text": "Replication\n\nDependencies\nWe will begin with importing libraries relevant to us like numpy and sns for computing and plotting. We would also be importing pdist and squareform from scipy.spatial.distance to calculate the pairwise distance and import MDS from sklearn.manifold to calculate the MDS values.\nLastly, we set the seed to ensure our (pseudo) random numbers are reproducible.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom sklearn.manifold import MDS\nimport seaborn as sns\nfrom scipy.spatial.distance import pdist, squareform\n\n\nnp.random.seed(42)\n\n\n\nFaces & Features\nNow that we have our dependencies sorted, we can start building. The very first thing we need to do is set the faces and features like the study does.\n\n\n\nfrom Nosofsky, 1991\n\n\nTo replicate this, we will create 10 faces with 4 features (e.g. eyes height, distance between eyes, nose length, etc). Nosofsky (1991) has defined the features but for our purposes we can move ahead with random features.\n\nn_faces = 10\nn_dims = 4\nfaces = np.random.rand(n_faces, n_dims)\n\n\nprint(\"Face feature matrix:\")\nprint(faces)\n\nFace feature matrix:\n[[0.37454012 0.95071431 0.73199394 0.59865848]\n [0.15601864 0.15599452 0.05808361 0.86617615]\n [0.60111501 0.70807258 0.02058449 0.96990985]\n [0.83244264 0.21233911 0.18182497 0.18340451]\n [0.30424224 0.52475643 0.43194502 0.29122914]\n [0.61185289 0.13949386 0.29214465 0.36636184]\n [0.45606998 0.78517596 0.19967378 0.51423444]\n [0.59241457 0.04645041 0.60754485 0.17052412]\n [0.06505159 0.94888554 0.96563203 0.80839735]\n [0.30461377 0.09767211 0.68423303 0.44015249]]\n\n\nAs you can see from the output, each row is a face, and each column is a different feature of the face. For example, if we consider the features to be aspects like Eye height, Eye separation, Nose length, and Mouth height, we can interpret the first face, which has the following values, as -\n[0.37454012 0.95071431 0.73199394 0.59865848]\nEye height ≈ 0.37 → slightly below mid level probably.\nEye separation ≈ 0.95 → appears to be wide.\nNose length ≈ 0.73 → likely a long nose.\nMouth height ≈ 0.60 → almost medium height.\nNote - I have mentioned features like eye height, nose length, etc. for the sake of comprehension, they are not inherently factored into the code\n\n\nPairwise Distance\nNext, we need to calculate the pairwise distance between every single row in the faces matrix. We would do so using the pdist function.\nIf faces is a matrix such that -\n\\[\n\\text{faces} =\n\\begin{bmatrix}\nx_1 & x_2 & x_3 & x_4 \\\\\\\\\ny_1 & y_2 & y_3 & y_4 \\\\\\\\\nz_1 & z_2 & z_3 & z_4\n\\end{bmatrix}\n\\]\nThen each row here represents a face with \\(x_1\\), \\(x_2\\), \\(x_3\\), etc. representing a feature. Thus, pdist(faces) computes:\nDistance between Face 0 and Face 1.\nDistance between Face 0 and Face 2.\nDistance between Face 1 and Face 2 (and so on).\nThe pdist function uses Euclidean Distance by default which is calculated as -\n\\[\nd = \\sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}\n\\]\nThe reason we are calculating the pair wise values (using Euclidean distance) is so that we can use the same for Multidimensional scaling, a dimension reduction method. You might be familiar with PCA as another dimension reduction method which uses correlation. I was surprised to learn that PCA and MDS at times can present with similar values.\nWe then run our code to get -\n\nface_dists = squareform(pdist(faces))\n\nWe then use the exponential decay function used by Nosofsky (1991) to simulate similarity and added noise from a normal distribution. Nosofsky (1991) used the following formula for the same -\n\\(s_{ij} = \\exp(-d_{ij})\\)\nWe also clip the range to ensure it’s clean and interpretable for our MDS. The last line prevents assymetry.\n\nsimilarity_matrix = np.exp(-face_dists) + np.random.normal(0, 0.05, face_dists.shape)\n\nsimilarity_matrix = np.clip(similarity_matrix, 0, 1)\n\nsimilarity_matrix = (similarity_matrix + similarity_matrix.T) / 2",
+    "crumbs": [
+      "Home",
+      "Multidimensional Scaling (MDS) from Nosofsky (1991)"
+    ]
+  },
+  {
+    "objectID": "research/ch1.html#multidimensional-scaling",
+    "href": "research/ch1.html#multidimensional-scaling",
+    "title": "Multidimensional Scaling (MDS) from Nosofsky (1991)",
+    "section": "Multidimensional Scaling",
+    "text": "Multidimensional Scaling\nWe used MDS to convert pairwise dissimilarities into 2D coordinates, creating a psychological map where:\nFaces that look similar are closer.\nFaces that look different are farther.\nThe original paper generated a 4D space, we have used a 2D space to keep it simpler.\n\nimport warnings\nwarnings.filterwarnings(\"ignore\")\n\ndissimilarity_matrix = 1 - similarity_matrix\n\nmds = MDS(n_components=2, dissimilarity='precomputed', random_state=42)\nmds_coords = mds.fit_transform(dissimilarity_matrix)\n\n\nprint(\"\\n2D psychological coordinates:\")\nprint(mds_coords)\n\n\n2D psychological coordinates:\n[[ 0.02883221 -0.4017954 ]\n [-0.43105011 -0.03414201]\n [-0.30656582  0.33467081]\n [ 0.17353843  0.35341104]\n [ 0.04439885 -0.0872471 ]\n [ 0.17295691  0.18802738]\n [-0.19412342  0.07736743]\n [ 0.38411899  0.12937088]\n [-0.2018434  -0.47425695]\n [ 0.32973737 -0.08540607]]\n\n\nLastly, we introduced a new face into the psychological space. Its position simulates a stimulus presented during a recognition/classification trial. Along with that qe calculated the distance between the test face and each stored face and then used Shepard’s law to convert those distances into activation strengths, and plotted the same.\n\ntest_face_coord = np.array([0.3, 0.15])\n\ndistances = np.linalg.norm(stored_coords - test_point, axis=1)\nsimilarities = np.exp(-c * distances)\n\nWe get the following plot for our test face with the above coordinates:\n\n\n\ntest_face_coord = np.array([0.3, 0.15])\n\n\nIf we change our coordinates to the following code - test_face_coord = np.array([0.05, 0.1]), our plot changes:\n\n\n\ntest_face_coord = np.array([0.05, 0.1])",
+    "crumbs": [
+      "Home",
+      "Multidimensional Scaling (MDS) from Nosofsky (1991)"
+    ]
+  },
+  {
+    "objectID": "research/index2.html",
+    "href": "research/index2.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "#Introduction",
+    "crumbs": [
+      "Home",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Shannon Fernandes",
+    "section": "",
+    "text": "I’m Shannon — I’ve completed my Bachelor’s and Master’s in Psychology. I like working with Python, R, or MATLAB to work with EEG or fMRI data, psychometric analyses, or random things I come across.\n\nplot_stat_map(tmap_filename, threshold=2, black_bg=True)\n\n\n\n\n\n\n\n\nYou can check out my research playground in the Research tab and projects in the Projects tab."
+  },
+  {
+    "objectID": "index.html#bio",
+    "href": "index.html#bio",
+    "title": "Shannon Fernandes",
+    "section": "",
+    "text": "I’m Shannon — I’ve completed my Bachelor’s and Master’s in Psychology. I like working with Python, R, or MATLAB to work with EEG or fMRI data, psychometric analyses, or random things I come across.\n\nplot_stat_map(tmap_filename, threshold=2, black_bg=True)\n\n\n\n\n\n\n\n\nYou can check out my research playground in the Research tab and projects in the Projects tab."
+  }
+]

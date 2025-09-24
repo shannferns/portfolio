@@ -1,0 +1,108 @@
+/* Typography & layout */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 850px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.interest-card {
+  background-color: var(--bs-body-bg);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.interest-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.interest-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.interest-card a {
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--bs-body-color);
+}
+
+
+
+html[data-bs-theme='dark'] body,
+body[data-bs-theme='dark'] {
+  --main-bg: #0d1117;
+  --main-text: #d1d5da;
+  --box-bg: #1e1e1e;
+}
+
+
+html[data-bs-theme='dark'] section h2,
+body[data-bs-theme='dark'] section h2 {
+  color: var(--accent);
+}
+
+/* Shift image card left and widen main content */
+.about-hero {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.about-hero img {
+  max-width: 220px;
+  border-radius: 12px;
+}
+
+.about-contents {
+  padding-right: 1rem;
+  line-height: 1.7;
+}
+
+/* Adjust spacing of headings and lists below */
+.quarto-about-trestles .about-contents h2 {
+  margin-top: 2.5rem;
+  font-size: 1.4rem;
+}
+
+.quarto-about-trestles .about-contents ul {
+  margin-left: 1.5rem;
+}
+
