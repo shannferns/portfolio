@@ -78,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-ecc2c41da66b8dbb0d339e6754a59479.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-33a3409bb64e1c14d424bafc8be88f71.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dark-ebe780fa19b81742a76f50aab756f195.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-ecc2c41da66b8dbb0d339e6754a59479.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -379,7 +379,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="a778310f" class="cell" data-execution_count="1">
+<div id="1879e874" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"s3.csv"</span>)</span>
@@ -590,7 +590,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="85bbcc38" class="cell" data-execution_count="2">
+<div id="07fea44f" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#pip install -q nltk</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">"vader_lexicon"</span>)</span>
@@ -620,10 +620,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[nltk_data] Downloading package vader_lexicon to
 [nltk_data]     /home/r3411249/nltk_data...
 [nltk_data]   Package vader_lexicon is already up-to-date!
-  0%|          | 0/1000 [00:00&lt;?, ?it/s]  9%|▊         | 87/1000 [00:00&lt;00:01, 822.53it/s] 17%|█▋        | 170/1000 [00:00&lt;00:01, 742.09it/s] 24%|██▍       | 245/1000 [00:00&lt;00:01, 717.36it/s] 33%|███▎      | 326/1000 [00:00&lt;00:00, 742.12it/s] 40%|████      | 401/1000 [00:00&lt;00:00, 701.59it/s] 47%|████▋     | 474/1000 [00:00&lt;00:00, 709.61it/s] 55%|█████▍    | 546/1000 [00:00&lt;00:00, 684.59it/s] 62%|██████▏   | 615/1000 [00:00&lt;00:00, 605.19it/s] 68%|██████▊   | 678/1000 [00:01&lt;00:00, 608.94it/s] 74%|███████▍  | 743/1000 [00:01&lt;00:00, 620.40it/s] 81%|████████  | 806/1000 [00:01&lt;00:00, 613.52it/s] 87%|████████▋ | 872/1000 [00:01&lt;00:00, 625.64it/s] 94%|█████████▍| 942/1000 [00:01&lt;00:00, 645.54it/s]100%|██████████| 1000/1000 [00:01&lt;00:00, 662.87it/s]</code></pre>
+  0%|          | 0/1000 [00:00&lt;?, ?it/s]  8%|▊         | 82/1000 [00:00&lt;00:01, 812.97it/s] 16%|█▋        | 164/1000 [00:00&lt;00:01, 727.29it/s] 24%|██▍       | 238/1000 [00:00&lt;00:01, 711.50it/s] 33%|███▎      | 326/1000 [00:00&lt;00:00, 742.70it/s] 40%|████      | 401/1000 [00:00&lt;00:00, 698.76it/s] 48%|████▊     | 475/1000 [00:00&lt;00:00, 711.35it/s] 55%|█████▍    | 547/1000 [00:00&lt;00:00, 692.26it/s] 62%|██████▏   | 617/1000 [00:00&lt;00:00, 644.57it/s] 69%|██████▉   | 690/1000 [00:01&lt;00:00, 657.88it/s] 76%|███████▌  | 759/1000 [00:01&lt;00:00, 665.66it/s] 83%|████████▎ | 826/1000 [00:01&lt;00:00, 651.14it/s] 90%|████████▉ | 897/1000 [00:01&lt;00:00, 663.85it/s] 97%|█████████▋| 968/1000 [00:01&lt;00:00, 676.23it/s]100%|██████████| 1000/1000 [00:01&lt;00:00, 682.68it/s]</code></pre>
 </div>
 </div>
-<div id="f6bff050" class="cell" data-execution_count="3">
+<div id="1ea9cc1f" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
