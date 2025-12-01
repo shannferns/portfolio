@@ -1,0 +1,194 @@
+/* Typography & layout */
+
+/* Prevent page overflow */
+html, body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;             /* slightly smaller base size for mobile */
+  line-height: 1.6;
+  margin: auto;
+  padding: 1rem;
+  max-width: 100%;             /* full width on small screens */
+}
+
+/* Keep text readable on larger screens */
+@media (min-width: 768px) {
+  body {
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 850px;          /* cap content width for readability */
+    padding: 2rem 1rem;
+  }
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Make images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+/* Light mode navbar */
+.quarto-light .navbar {
+  background-color: #ffffff !important; /* white background */
+  color: #333333 !important;            /* dark text */
+}
+
+.quarto-light .navbar a {
+  color: #333333 !important;
+}
+
+/* Override Darkly dark mode background and text */
+body.quarto-dark {
+  background-color: #121212; /* custom dark background */
+  color: #e0e0e0;           /* custom light text */
+}
+
+/* Links in dark mode */
+body.quarto-dark a {
+  color: #e0e0e0;
+}
+
+/* Dark mode navbar */
+.quarto-dark .navbar {
+  background-color: #2d2e2e !important; /* custom dark background */
+  color: #e0e0e0 !important;
+}
+
+.quarto-dark .navbar a {
+  color: #e0e0e0 !important; /* teal links */
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.interest-card {
+  background-color: var(--bs-body-bg);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.interest-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.interest-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.interest-card a {
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--bs-body-color);
+}
+
+
+/* General about page tweaks */
+.quarto-about-jolla .about-text {
+  max-width: 100% !important;
+  width: 100% !important;
+  word-wrap: break-word;     /* break long words if needed */
+  overflow-wrap: break-word; /* modern alternative */
+  text-align: center;        /* optional: center text under the image */
+  padding: 0 1rem;           /* add breathing room on small screens */
+}
+
+@media (max-width: 768px) {
+  .quarto-about-jolla {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .quarto-about-jolla .about-image {
+    margin-bottom: 1rem !important;
+  }
+
+  .quarto-about-jolla .about-text {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 1rem;
+  }
+}
+
+
+html[data-bs-theme='dark'] body,
+body[data-bs-theme='dark'] {
+  --main-bg: #0d1117;
+  --main-text: #d1d5da;
+  --box-bg: #1e1e1e;
+}
+
+
+html[data-bs-theme='dark'] section h2,
+body[data-bs-theme='dark'] section h2 {
+  color: var(--accent);
+}
+
+/* Shift image card left and widen main content */
+.about-hero {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.about-hero img {
+  max-width: 220px;
+  border-radius: 12px;
+}
+
+.about-contents {
+  padding-right: 1rem;
+  line-height: 1.7;
+}
+
+/* Adjust spacing of headings and lists below */
+.quarto-about-trestles .about-contents h2 {
+  margin-top: 2.5rem;
+  font-size: 1.4rem;
+}
+
+.quarto-about-trestles .about-contents ul {
+  margin-left: 1.5rem;
+}
+
